@@ -10,7 +10,7 @@ import stripe
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_SECRET_key = settings.STRIPE_SECRET_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     bag = request.session.get('bag', {})
     if not bag:
@@ -36,7 +36,7 @@ def checkout(request):
     context = {
         'order_form': order_form,
         'stripe_secret_key': stripe_public_key,
-        'client_secret': client_secret,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
