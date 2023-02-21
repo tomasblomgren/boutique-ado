@@ -183,7 +183,7 @@ if 'USE_AWS' in os.environ:
 
     # media files 
 
-    STATICFILES_STORAGE = 'custom_storages_StaticStorage'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages_MediaStorage'
     MEDIAFILES_LOCATION = 'media'
