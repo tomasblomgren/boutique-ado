@@ -174,6 +174,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+    
+        #Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 2099 dec 24.00 GMT',
+        'CacheControl': 'max_age_2400000',
+    }
+
     # bucket config
     AWS_STORAGE_BUCKET_NAME = 'tomasblomgren-boutique-ado'
     AWS_S3_REGION_NAME = 'us-east-1'
